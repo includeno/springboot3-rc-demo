@@ -12,6 +12,6 @@ ENV NAME="springboot3-rc-demo"
 ENV server_port="8080"
 
 #add jar file
-ADD ${NAME}/target/${NAME}-${VERSION}.jar /app/application.jar
+ADD target/${NAME}-${VERSION}.jar /app/application.jar
 #ENTRYPOINT ["java","-jar","/app/application.jar","--dockerconfig=true"]
 CMD java -jar /app/application.jar --server.port=${server_port}
