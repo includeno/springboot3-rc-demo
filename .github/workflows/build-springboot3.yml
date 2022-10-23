@@ -52,7 +52,7 @@ jobs:
         uses: docker/build-push-action@v2 #https://github.com/docker/build-push-action
         with:
           context: . #当前文件夹
-          file: ${{ env.TAG_NAME }}/Dockerfile #指定镜像dockerfile
+          file: Dockerfile #指定镜像dockerfile ${{ env.TAG_NAME }}/Dockerfile
           platforms: linux/amd64 #镜像平台
           tags: "${{ secrets.DOCKER_USERNAME }}/origin-${{ env.TAG_NAME }}:latest,${{ secrets.DOCKER_USERNAME }}/origin-${{ env.TAG_NAME }}:${{ env.RELEASE_VERSION }}"
           push: true
